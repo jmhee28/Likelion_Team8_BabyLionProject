@@ -1,0 +1,190 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <main id="main">
+
+<!-- ======= Hero Slider Section ======= -->
+<!-- End Hero Slider Section -->
+
+    <!-- ======= Post Grid Section ======= -->
+    <section id="posts" class="posts">
+      <div class="container" data-aos="fade-up">
+        <div class="row g-5">
+          <div class="col-lg-4">
+            <div> 
+              <div class="post-entry-1 lg">
+                <div class="profile"> <div class="card p-4"> 
+                  <div class=" image d-flex flex-column justify-content-center align-items-center"> 
+                  <button class="btn btn-secondary"> <img class="profile_img" src='{% static "/img/Emblem.jpg" %}' height="100" width="100" /></button> 
+                  <span class="name mt-3">명륜이</span> 
+                  <span class="idd">성균관대학교</span> 
+                  <div class="d-flex flex-row justify-content-center align-items-center gap-2">
+                  <span class="idd1">경영대학</span> 
+                  <span><i class="fa fa-copy"></i></span> 
+                  </div> 
+                  <div class="d-flex flex-row justify-content-center align-items-center mt-3"> 
+                    <span class="number">8 <span class="follow">게시글</span></span>
+                    <a href="{% url 'write' %}" class="write">
+                      <img id="bigger" src='{% static "/img/pencil-square.svg" %}' alt="">
+                    </a>
+                  
+                  </div> 
+                    
+                  <div class=" d-flex mt-2"> <button class="btn1 btn-dark">프로필 수정</button> </div>
+                  <div class="text mt-3"> <span>Eleanor Pena is a creator of minimalistic x bold graphics and digital artwork.<br><br> Artist/ Creative Director by Day #NFT minting@ with FND night. </span> </div>
+                  <div class="gap-3 mt-3 icons d-flex flex-row justify-content-center align-items-center"> <span><i class="fa fa-twitter"></i></span> <span><i class="fa fa-facebook-f"></i></span> <span><i class="fa fa-instagram"></i></span> <span><i class="fa fa-linkedin"></i></span> </div> <div class=" px-2 rounded mt-4 date "> <span class="join">2022년 5월부터 활동중</span> </div> </div> </div>
+            </div>
+                
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-lg-8">
+            <div class="row g-5">
+              <div class="col-lg-4 border-start custom-border">
+                <div class="post-entry-1">
+                  <a href="{% url 'singlepost' %}"><img src='{% static "img/cpa질문.jpg" %}' alt="" class="img-fluid"></a>
+                  <div class="post-meta"><span class="date">상경대학 게시판</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
+                  <h2><a href="{% url 'singlepost' %}">CPA 질문</a></h2>
+                </div>
+                <div class="post-entry-1">
+                  <a href="{% url 'singlepost' %}"><img src='{% static "/img/post-landscape-5.jpg" %}' alt="" class="img-fluid"></a>
+                  <div class="post-meta"><span class="date">융합대학 게시판</span> <span class="mx-1">&bullet;</span> <span>Jul 17th '22</span></div>
+                  <h2><a href="{% url 'singlepost' %}">How to Avoid Distraction and Stay Focused During Video Calls?</a></h2>
+                </div>
+                <div class="post-entry-1">
+                  <a href="{% url 'singlepost' %}"><img src="{% static '/img/post-landscape-7.jpg' %}" alt="" class="img-fluid"></a>
+                  <div class="post-meta"><span class="date">정보통신대학 게시판</span> <span class="mx-1">&bullet;</span> <span>Mar 15th '22</span></div>
+                  <h2><a href="{% url 'singlepost' %}">Why Craigslist Tampa Is One of The Most Interesting Places On the Web?</a></h2>
+                </div>
+              </div>
+              <div class="col-lg-4 border-start custom-border">
+                <div class="post-entry-1">
+                  <a href="{% url 'singlepost' %}"><img src='{% static "/img/post-landscape-3.jpg" %}' alt="" class="img-fluid"></a>
+                  <div class="post-meta"><span class="date">공과대학 모여라</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
+                  <h2><a href="{% url 'singlepost' %}">6 Easy Steps To Create Your Own Cute Merch For Instagram</a></h2>
+                </div>
+                <div class="post-entry-1">
+                  <a href="{% url 'singlepost' %}"><img src='{% static "/img/post-landscape-6.jpg" %}' alt="" class="img-fluid"></a>
+                  <div class="post-meta"><span class="date">의과대학 게시판</span> <span class="mx-1">&bullet;</span> <span>Mar 1st '22</span></div>
+                  <h2><a href="{% url 'singlepost' %}">10 Life-Changing Hacks Every Working Mom Should Know</a></h2>
+                </div>
+                <div class="post-entry-1">
+                  <a href="{% url 'singlepost' %}"><img src='{% static "/img/post-landscape-8.jpg" %}' alt="" class="img-fluid"></a>
+                  <div class="post-meta"><span class="date">문과대학 게시판</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
+                  <h2><a href="{% url 'singlepost' %}">5 Great Startup Tips for Female Founders</a></h2>
+                </div>
+              </div>
+
+              <!-- Trending Section -->
+              <div class="col-lg-4">
+                <div class="row d-flex justify-content-center mt-100 mb-100">
+                        
+                                  
+                  <div>
+                     
+                     <div class="card2">
+                         <div class="card2-body text-center">
+                             <h4 class="card2-title m-b-0">실시간 인기글</h4>
+                         </div>
+                         <ul class="list-style-none">
+                             <li class="d-flex no-block card-body">
+                                 <i class="fa fa-check-circle w-30px m-t-5"></i>
+                                 <div>
+                                     <a href="#" class="m-b-0 font-medium p-0" data-abc="true">Version 2.5 released</a>
+                                     <span class="text-muted">A new version 2.5 has been released. </span>
+                                 </div>
+                                 <div class="ml-auto">
+                                     <div class="tetx-right">
+                                         <h5 class="text-muted m-b-0">26</h5>
+                                         <span class="text-muted font-16">FEB</span>
+                                     </div>
+                                 </div>
+                             </li>
+                             <li class="d-flex no-block card-body border-top">
+                                 <i class="fa fa-gift w-30px m-t-5"></i>
+                                 <div>
+                                     <a href="#" class="m-b-0 font-medium p-0" data-abc="true">Congratulation to AAA For new investment</a>
+                                     <span class="text-muted">AAA has invested $2M in MMM. we are happy to working forward with AAA.</span>
+                                 </div>
+                                 <div class="ml-auto">
+                                     <div class="tetx-right">
+                                         <h5 class="text-muted m-b-0">11</h5>
+                                         <span class="text-muted font-16">MAR</span>
+                                     </div>
+                                 </div>
+                             </li>
+                             <li class="d-flex no-block card-body border-top">
+                                 <i class="fa fa-plus w-30px m-t-5"></i>
+                                 <div>
+                                     <a href="#" class="m-b-0 font-medium p-0" data-abc="true">Hiring Android Developers</a>
+                                     <span class="text-muted">We are hiring android developers to expend our mobile development team.</span>
+                                 </div>
+                                 <div class="ml-auto">
+                                     <div class="tetx-right">
+                                         <h5 class="text-muted m-b-0">19</h5>
+                                         <span class="text-muted font-16">APR</span>
+                                     </div>
+                                 </div>
+                             </li>
+                             <li class="d-flex no-block card-body border-top">
+                                 <i class="fa fa-leaf w-30px m-t-5"></i>
+                                 <div>
+                                     <a href="#" class="m-b-0 font-medium p-0" data-abc="true">Anounced New CEO</a>
+                                     <span class="text-muted">We announced John kendey as new CEO of the company.</span>
+                                 </div>
+                                 <div class="ml-auto">
+                                     <div class="tetx-right">
+                                         <h5 class="text-muted m-b-0">20</h5>
+                                         <span class="text-muted font-16">JUN</span>
+                                     </div>
+                                 </div>
+                             </li>
+                             <li class="d-flex no-block card-body border-top">
+                                 <i class="fa fa-question-circle w-30px m-t-5"></i>
+                                 <div>
+                                     <a href="#" class="m-b-0 font-medium p-0" data-abc="true">New Guidelines to Employees</a>
+                                     <span class="text-muted">We have realeased new guidelines to all employees</span>
+                                 </div>
+                                 <div class="ml-auto">
+                                     <div class="tetx-right">
+                                         <h5 class="text-muted m-b-0">15</h5>
+                                         <span class="text-muted font-16">AUG</span>
+                                     </div>
+                                 </div>
+                             </li>
+                             <li class="d-flex no-block card-body border-top">
+                                 <i class="fa fa-plus w-30px m-t-5"></i>
+                                 <div>
+                                     <a href="#" class="m-b-0 font-medium p-0" data-abc="true">Android App version 5.1 released</a>
+                                     <span class="text-muted">We have realeased android app version 5.1. update now.</span>
+                                 </div>
+                                 <div class="ml-auto">
+                                     <div class="tetx-right">
+                                         <h5 class="text-muted m-b-0">19</h5>
+                                         <span class="text-muted font-16">OCT</span>
+                                     </div>
+                                 </div>
+                             </li>
+                         </ul>
+                     </div>
+
+                 </div>
+                 </div>
+                 
+
+              </div> <!-- End Trending Section -->
+            </div>
+          </div>
+
+        </div> <!-- End .row -->
+      </div>
+    </section> <!-- End Post Grid Section -->
+
+    <!-- ======= Culture Category Section ======= -->
+    
+  </main><!-- End #main -->
+
+{% endblock %}

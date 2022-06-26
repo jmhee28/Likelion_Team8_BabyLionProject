@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+  <main id="main">
+    <section class="single-post-content">
+      <div class="container">
+        
+          <div class="post" data-aos="fade-up">
+            <div>
+              <div class="box">
+                <select>
+                  <option>상경대학</option>
+                  <option>소프트웨어융합대학</option>
+                  <option>정보통신대학</option>
+                  <option>공과대학</option>
+                  <option>의과대학</option>
+                </select>
+              </div>
+              <input class="input_field" type="text" placeholder="제목을 입력해주세요." ><br>
+              <textarea class="textarea_field" placeholder="내용을 입력해주세요."></textarea><br>
+              <button class="write_button">게시</button>
+            </div>
+          </div>
+        
+      </div>
+    </section>
+  </main><!-- End #main -->
+
+{% endblock %}
