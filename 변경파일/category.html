@@ -1,0 +1,159 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+  <main id="main">
+    <section>
+      <div class="container">
+        <div class="row">
+
+          <div class="col-md-9" data-aos="fade-up">
+            <h3 class="category-title">Category: {{upperCat.category1}}-{{upperCat.category2}}</h3>
+            {% for post in posts %}
+            <div class="d-md-flex post-entry-2 half">
+              <a href="{% url 'singlepost' post.id %}" class="me-4 thumbnail">
+                {% if post.photo %}
+                  <img src="{{ post.photo.url }}" style="width:355px; height:225px;" alt="" class="img-fluid">
+
+                {% else %}
+                <img src="{% static '/img\elephant-icon-11586 (1).jpg' %}" style="width:355px; height:225px;" alt="" class="img-fluid">
+                  
+                {% endif %}
+                
+              </a>
+              <div>
+                <div class="post-meta"><span class="date">{{upperCat.category2}} 게시판</span> <span class="mx-1">&bullet;</span> <span>{{post.date}}</span></div>
+                <h3 style="width:600px; height:40px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"><a href="{% url 'singlepost' post.id %}">{{post.title}}</a></h3>
+                <p style="width:600px; line-height: 1.2em; height: 3.6em; overflow:hidden; text-overflow:ellipsis;">{{post.body}}</p>
+                <div class="d-flex align-items-center author">
+                  <div class="photo"><img src='{% static "/img/person-2.jpg" %}' alt="" class="img-fluid"></div>
+                  <div class="name">
+                    <h3 class="m-0 p-0">Wade Warren</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+
+
+            <div class="text-start py-4">
+              <div class="custom-pagination">
+                <a href="#" class="prev">Prevous</a>
+                <a href="#" class="active">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+                <a href="#" class="next">Next</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <!-- ======= Sidebar ======= -->
+            <div class="aside-block">
+
+              <ul class="nav nav-pills custom-tab-nav mb-4" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="pills-popular-tab" data-bs-toggle="pill" data-bs-target="#pills-popular" type="button" role="tab" aria-controls="pills-popular" aria-selected="true">인기글</button>
+                </li>
+
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="pills-latest-tab" data-bs-toggle="pill" data-bs-target="#pills-latest" type="button" role="tab" aria-controls="pills-latest" aria-selected="false">최신글</button>
+                </li>
+              </ul>
+
+              <div class="tab-content" id="pills-tabContent">
+
+                <!-- Popular -->
+                <div class="tab-pane fade show active" id="pills-popular" role="tabpanel" aria-labelledby="pills-popular-tab">
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">상경대학 게시판</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
+                    <h2 class="mb-2"><a href="#">전국 CPA 고수 대학생 분들에게 질문드립니다...</a></h2>
+                    <span class="author mb-3 d-block">wade warren</span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">행정학과 게시판</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
+                    <h2 class="mb-2"><a href="#">특정범죄 가중처벌 등에 관한 법률 개정안 및 도로교통법 개정안</a></h2>
+                    <span class="author mb-3 d-block">Sunwoo</span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">독어독문학과 게시판</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
+                    <h2 class="mb-2"><a href="#">프리드리히 니체에 대하여</a></h2>
+                    <span class="author mb-3 d-block">JHL</span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">독어독문학과 게시판</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
+                    <h2 class="mb-2"><a href="#">에밀리아 갈로티와 18세기 독일 계몽주의</a></h2>
+                    <span class="author mb-3 d-block">youjean</span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">소프트웨어학과 게시판</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
+                    <h2 class="mb-2"><a href="#">GAN으로 생성한 데이터를 지도학습용 데이터로 사용해도 괜찮을까요?</a></h2>
+                    <span class="author mb-3 d-block">빵야빵야</span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">의과대학 게시판</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
+                    <h2 class="mb-2"><a href="#">Ca2+ entry through reverse Na+/Ca2+ exchanger in NCI-H716, glucagon-like peptide-1 secreting cells</a></h2>
+                    <span class="author mb-3 d-block">Jenny Wilson</span>
+                  </div>
+                </div> <!-- End Popular -->
+
+                <!-- Latest -->
+                <div class="tab-pane fade show active" id="pills-latest" role="tabpanel" aria-labelledby="pills-latest-tab">
+                  
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">행정학과 게시판</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
+                    <h2 class="mb-2"><a href="#">특정범죄 가중처벌 등에 관한 법률 개정안 및 도로교통법 개정안</a></h2>
+                    <span class="author mb-3 d-block">Sunwoo</span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">독어독문학과 게시판</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
+                    <h2 class="mb-2"><a href="#">프리드리히 니체에 대하여</a></h2>
+                    <span class="author mb-3 d-block">JHL</span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">의과대학 게시판</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
+                    <h2 class="mb-2"><a href="#">Ca2+ entry through reverse Na+/Ca2+ exchanger in NCI-H716, glucagon-like peptide-1 secreting cells</a></h2>
+                    <span class="author mb-3 d-block">Jenny Wilson</span>
+                  </div>
+                  
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">독어독문학과 게시판</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
+                    <h2 class="mb-2"><a href="#">에밀리아 갈로티와 18세기 독일 계몽주의</a></h2>
+                    <span class="author mb-3 d-block">youjean</span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">소프트웨어학과 게시판</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
+                    <h2 class="mb-2"><a href="#">GAN으로 생성한 데이터를 지도학습용 데이터로 사용해도 괜찮을까요?</a></h2>
+                    <span class="author mb-3 d-block">빵야빵야</span>
+                  </div>
+                  
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">상경대학 게시판</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
+                    <h2 class="mb-2"><a href="#">전국 CPA 고수 대학생 분들에게 질문드립니다...</a></h2>
+                    <span class="author mb-3 d-block">wade warren</span>
+                  </div>
+
+                  
+                </div> <!-- End Latest -->
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main><!-- End #main -->
+
+{% endblock %}
