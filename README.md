@@ -2,6 +2,10 @@
 
 ## 과끼리
 전국의 대학생이 같이 사용할 수 있는 학과별 게시판
+
+###사용언어 및 프레임워크
+Django, python, css, html, js
+
 ### 첫 화면
 <img src = https://user-images.githubusercontent.com/92200502/176900315-31bbe367-e365-4e6d-b554-3d1b9a278a08.png  width="600" height="400"/>
 
