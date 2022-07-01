@@ -1,0 +1,157 @@
+{% extends "base.html" %}
+
+{% block title %}계정 생성{% endblock %}
+
+{% block content %}
+<div class="container my-3 user-select-none">
+
+    <h4 class="text-center mb-5">계정생성</h4>
+
+    <form method="post" class="post-form row g-3 p-4 text-center justify-content-center">
+        {% csrf_token %}
+
+        {% comment %}{% include "form_errors.html" %}{% endcomment %}
+
+        <div class="row mb-3">
+            <div class="col">
+                <label for="username">사용자 이름</label>
+                <input type="text" class="form-control
+                    {% if form.errors.username %}is-invalid{% elif form.is_bound %}is-valid{% endif %}"
+                       placeholder="Username" aria-label="Username" name="username"
+                       id="username" value="{{ form.username.value|default_if_none:'' }}">
+                <div class="invalid-feedback">
+                    {% for error in form.errors.username %}
+                        {{ error }}<br>
+                    {% endfor %}
+                </div>
+                <div class="valid-feedback">
+                    좋아요!
+                </div>
+
+            </div>
+            <div class="col">
+                <label for="email">이메일</label>
+                <input type="email" class="form-control
+                    {% if form.errors.email %}is-invalid{% elif form.is_bound %}is-valid{% endif %}"
+                       placeholder="Email" aria-label="Email" name="email"
+                       id="email" value="{{ form.email.value|default_if_none:'' }}">
+                <div class="invalid-feedback">
+                    {% for error in form.errors.email %}
+                        {{ error }}<br>
+                    {% endfor %}
+                </div>
+                <div class="valid-feedback">
+                    좋아요!
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <label for="password1">비밀번호</label>
+                <input type="password" class="form-control
+                    {% if form.errors.password1 or form.errors.password2 %}is-invalid{% elif form.is_bound %}is-valid{% endif %}"
+                       placeholder="Password1" aria-label="Password1"
+                       name="password1"
+                       id="password1" value="{{ form.password1.value|default_if_none:'' }}">
+                <div class="invalid-feedback">
+                    {% for error in form.errors.password1 %}
+                        {{ error }}<br>
+                    {% endfor %}
+                </div>
+                <div class="valid-feedback">
+                    좋아요!
+                </div>
+            </div>
+            <div class="col">
+                <label for="password2">비밀번호 확인</label>
+                <input type="password" class="form-control
+                    {% if form.errors.password2 %}is-invalid{% elif form.is_bound %}is-valid{% endif %}"
+                       placeholder="Password2" aria-label="Password2"
+                       name="password2"
+                       id="password2" value="{{ '' }}">
+                <div class="invalid-feedback">
+                    {% for error in form.errors.password2 %}
+                        {{ error }}<br>
+                    {% endfor %}
+                </div>
+                <div class="valid-feedback">
+                    좋아요!
+                </div>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col">
+                <label for="university">학교</label>
+                <input type="text" class="form-control
+                    {% if form.errors.university %}is-invalid{% elif form.is_bound %}is-valid{% endif %}"
+                       placeholder="대학교" aria-label="University" name="university"
+                       id="university" value="{{ form.university.value|default_if_none:'' }}">
+                <div class="invalid-feedback">
+                    {% for error in form.errors.username %}
+                        {{ error }}<br>
+                    {% endfor %}
+                </div>
+                <div class="valid-feedback">
+                    좋아요!
+                </div>
+
+            </div>
+            <div class="col"><label for="major">전공</label>
+                <input type="text" class="form-control
+                    {% if form.errors.major %}is-invalid{% elif form.is_bound %}is-valid{% endif %}"
+                       placeholder="전공" aria-label="major" name="major"
+                       id="major" value="{{ form.major.value|default_if_none:'' }}">
+                <div class="invalid-feedback">
+                    {% for error in form.errors.email %}
+                        {{ error }}<br>
+                    {% endfor %}
+                </div>
+                <div class="valid-feedback">
+                    좋아요!
+                </div>
+            </div>
+
+        </div>
+        <div class="row mb-3">
+            <div class="col">
+                <label for="address">주소</label>
+                <input type="text" class="form-control
+                    {% if form.errors.address %}is-invalid{% elif form.is_bound %}is-valid{% endif %}"
+                       placeholder="address" aria-label="address" name="address"
+                       id="address" value="{{ form.address.value|default_if_none:'' }}">
+                <div class="invalid-feedback">
+                    {% for error in form.errors.address %}
+                        {{ error }}<br>
+                    {% endfor %}
+                </div>
+                <div class="valid-feedback">
+                    좋아요!
+                </div>
+
+            </div>
+            <div class="col">
+                <label for="phone_number">핸드폰 번호</label>
+                <input type="text" class="form-control
+                    {% if form.errors.email %}is-invalid{% elif form.is_bound %}is-valid{% endif %}"
+                       placeholder="phone_number" aria-label="phone_number" name="phone_number"
+                       id="phone_number" value="{{ form.phone_number.value|default_if_none:'' }}">
+                <div class="invalid-feedback">
+                    {% for error in form.errors.phone_number %}
+                        {{ error }}<br>
+                    {% endfor %}
+                </div>
+                <div class="valid-feedback">
+                    좋아요!
+                </div>
+            </div>
+
+        </div>
+        <div class="row p-4">
+            <button type="submit" class="btn btn-primary text-center">생성하기</button>
+        </div>
+    </form>
+
+</div>
+{% endblock %}

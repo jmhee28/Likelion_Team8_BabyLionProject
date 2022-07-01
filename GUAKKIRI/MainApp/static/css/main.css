@@ -1,13 +1,4 @@
-/**
-* Template Name: ZenBlog - v1.0.0
-* Template URL: https://bootstrapmade.com/zenblog-bootstrap-blog-template/
-* Author: BootstrapMade.com
-* License: https:///bootstrapmade.com/license/
-*/
 
-/**
-* Check out variables.css for easy customization of colors, typography, and other repetitive properties
-*/
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
@@ -43,7 +34,7 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-primary);
+  font-family: 'LeferiPoint-WhiteObliqueA';
 }
 
 #main {
@@ -143,7 +134,7 @@ section {
   font-size: 30px;
   font-weight: 700;
   color: var(--color-default);
-  font-family: var(--font-primary);
+  font-family: 'LeferiPoint-WhiteObliqueA';
 }
 
 .search-form-wrap {
@@ -305,6 +296,20 @@ section {
   display: none;
 }
 
+#profile_box{
+  width: 30px;
+  height: 30px;
+  border-radius: 70%;
+  overflow: hidden;
+  margin-left: 32px;
+}
+#profile_nav{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+}
+
 /*--------------------------------------------------------------
 # Mobile Navigation
 --------------------------------------------------------------*/
@@ -464,9 +469,19 @@ section {
 .btn1 {
   height: 40px;
   width: 150px;
-  border: none;
+  border-width: thin;
+  border-radius: 33px;
+  background-color: #FFFFFF;
+  color: #000;
+  font-size: 15px
+}
+
+.btn2 {
+  height: 40px;
+  width: 150px;
+  border-radius: 33px;
   background-color: #000;
-  color: #aeaeae;
+  color: #FFFFFF;
   font-size: 15px
 }
 

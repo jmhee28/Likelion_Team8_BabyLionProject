@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>전공 공유 커뮤니티</title>
+  <title>Guakkiri-전공 공유 커뮤니티</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -40,86 +40,90 @@
 </head>
 
 <body>
-
   <!-- ======= Header ======= -->
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-      <a href="{% url 'home' %}" class="logo d-flex align-items-center">
+      <a href="{% url 'home' %}" class="logo align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img src='{% static "/img/로고.png" %}' alt="">
-        <h1>Study</h1>
+        <img src='{% static "/img/과끼리로고.png" %}' alt="">
       </a>
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="{% url 'home' %}">홈</a></li>
-          <li class="dropdown"><a href="{% url 'category' %}"><span>상경대학</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+          <li><a href="{% url 'home' %}" style="padding-left: 0px; padding-right: 15px">홈</a></li><br>
+          <li class="dropdown"><span>상경대학</span> <i class="bi bi-chevron-down dropdown-indicator"></i>
             <ul>
-              <li class="dropdown"><a href="#">경영학과</a></li>
-              <li class="dropdown"><a href="#">경제학과</a></li>
-              <li class="dropdown"><a href="#">통계학과</a></li>
+              <li class="dropdown"><a href="{% url 'category' '상경대학' %}">상경대학 공통</a></li>
+              <li class="dropdown"><a href="{% url 'category' '경영학과' %}">경영학과</a></li>
+              <li class="dropdown"><a href="{% url 'category' '경제학과' %}">경제학과</a></li>
+              <li class="dropdown"><a href="{% url 'category' '통계학과' %}">통계학과</a></li>
 
             </ul>
           </li>
-          <li class="dropdown"><a href="{% url 'category' %}"><span>소프트웨어융합대학</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+          <li class="dropdown"><span>소프트웨어융합대학</span> <i class="bi bi-chevron-down dropdown-indicator"></i>
             <ul>
-              <li class="dropdown"><a href="#">소프트웨어학과</a></li>
-              <li class="dropdown"><a href="#">2</a></li>
-              <li class="dropdown"><a href="#">3</a></li>
+              <li class="dropdown"><a href="{% url 'category' '소프트웨어융합대학' %}">소프트웨어융합대학 공통</a></li>
+              <li class="dropdown"><a href="{% url 'category' '소프트웨어학과' %}">소프트웨어학과</a></li>
+              
             </ul>
            </li>
-           <li class="dropdown"><a href="{% url 'category' %}"><span>정보통신대학</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+           <li class="dropdown"><span>정보통신대학</span> <i class="bi bi-chevron-down dropdown-indicator"></i>
             <ul>
-              <li class="dropdown"><a href="#">전기전자공학부</a></li>
-              <li class="dropdown"><a href="#">반도체시스템공학과</a></li>
-              <li class="dropdown"><a href="#">3</a></li>
+              <li class="dropdown"><a href="{% url 'category' '정보통신대학' %}">정보통신대학 공통</a></li>
+              <li class="dropdown"><a href="{% url 'category' '전기전자공학부' %}">전기전자공학부</a></li>
+              <li class="dropdown"><a href="{% url 'category' '반도체시스템공학과' %}">반도체시스템공학과</a></li>
             </ul>
            </li>
-           <li class="dropdown"><a href="{% url 'category' %}"><span>공과대학</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+           <li class="dropdown"><span>공과대학</span> <i class="bi bi-chevron-down dropdown-indicator"></i>
             <ul>
-              <li class="dropdown"><a href="#">화학공학부</a></li>
-              <li class="dropdown"><a href="#">기계공학부</a></li>
-              <li class="dropdown"><a href="#">나노공학과</a></li>
-              <li class="dropdown"><a href="#">신소재공학부</a></li>
-              <li class="dropdown"><a href="#">건축학부</a></li>
+              <li class="dropdown"><a href="{% url 'category' '공과대학' %}">공과대학 공통</a></li>
+              <li class="dropdown"><a href="{% url 'category' '화학공학부' %}">화학공학부</a></li>
+              <li class="dropdown"><a href="{% url 'category' '기계공학부' %}">기계공학부</a></li>
+              <li class="dropdown"><a href="{% url 'category' '나노공학과' %}">나노공학과</a></li>
+              <li class="dropdown"><a href="{% url 'category' '신소재공학부' %}">신소재공학부</a></li>
+              <li class="dropdown"><a href="{% url 'category' '건축학부' %}">건축학부</a></li>
             </ul>
            </li>
-           <li class="dropdown"><a href="{% url 'category' %}"><span>의과대학</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+           <li class="dropdown"><span>의과대학</span> <i class="bi bi-chevron-down dropdown-indicator"></i>
             <ul>
-              <li class="dropdown"><a href="#">의학과</a></li>
+              <li class="dropdown"><a href="{% url 'category' '의과대학' %}">의과대학 공통</a></li>
+              <li class="dropdown"><a href="{% url 'category' '의학과' %}">의학과</a></li>
             </ul>
            </li>
-           <li class="dropdown"><a href="{% url 'category' %}"><span>문과대학</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+           <li class="dropdown"><span>문과대학</span> <i class="bi bi-chevron-down dropdown-indicator"></i>
             <ul>
-              <li class="dropdown"><a href="#">국어국문학과</a></li>
-              <li class="dropdown"><a href="#">프랑스어문학과</a></li>
-              <li class="dropdown"><a href="#">독어독문학과</a></li>
-              <li class="dropdown"><a href="#">영어영문학과</a></li>
-              <li class="dropdown"><a href="#">중어중문학과</a></li>
-              <li class="dropdown"><a href="#">러시아어문학과</a></li>
-              <li class="dropdown"><a href="#">한문학과</a></li>
-              <li class="dropdown"><a href="#">철학과</a></li>
-              <li class="dropdown"><a href="#">사학과</a></li>
-              <li class="dropdown"><a href="#">문헌정보학과</a></li>
+              <li class="dropdown"><a href="{% url 'category' '문과대학' %}">문과대학 공통</a></li>
+              <li class="dropdown"><a href="{% url 'category' '국어국문학과' %}">국어국문학과</a></li>
+              <li class="dropdown"><a href="{% url 'category' '프랑스어문학과' %}">프랑스어문학과</a></li>
+              <li class="dropdown"><a href="{% url 'category' '독어독문학과' %}">독어독문학과</a></li>
+              <li class="dropdown"><a href="{% url 'category' '영어영문학과' %}">영어영문학과</a></li>
+              <li class="dropdown"><a href="{% url 'category' '중어중문학과' %}">중어중문학과</a></li>
+              <li class="dropdown"><a href="{% url 'category' '러시아어문학과' %}">러시아어문학과</a></li>
+              <li class="dropdown"><a href="{% url 'category' '한문학과' %}">한문학과</a></li>
+              <li class="dropdown"><a href="{% url 'category' '철학과' %}">철학과</a></li>
+              <li class="dropdown"><a href="{% url 'category' '사학과' %}">사학과</a></li>
+              <li class="dropdown"><a href="{% url 'category' '문헌정보학과' %}">문헌정보학과</a></li>
             </ul>
         </li>
-        <li class="dropdown"><a href="{% url 'category' %}"><span>사회과학대학</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+        <li class="dropdown"><span>사회과학대학</span> <i class="bi bi-chevron-down dropdown-indicator"></i>
           <ul>
-            <li class="dropdown"><a href="#">행정학과</a></li>
-            <li class="dropdown"><a href="#">미디어커뮤니케이션학과</a></li>
-            <li class="dropdown"><a href="#">사회복지학과</a></li>
-            <li class="dropdown"><a href="#">정치외교학과</a></li>
-            <li class="dropdown"><a href="#">사회학과</a></li>
-            <li class="dropdown"><a href="#">심리학과</a></li>
+            <li class="dropdown"><a href="{% url 'category' '사회과학대학' %}">사회과학대학 공통</a></li>
+            <li class="dropdown"><a href="{% url 'category' '행정학과' %}">행정학과</a></li>
+            <li class="dropdown"><a href="{% url 'category' '미디어커뮤니케이션학과' %}">미디어커뮤니케이션학과</a></li>
+            <li class="dropdown"><a href="{% url 'category' '정치외교학과' %}">정치외교학과</a></li>
+            <li class="dropdown"><a href="{% url 'category' '사회복지학과' %}">사회복지학과</a></li>
+            <li class="dropdown"><a href="{% url 'category' '사회학과' %}">사회학과</a></li>
+            <li class="dropdown"><a href="{% url 'category' '심리학과' %}">심리학과</a></li>
           </ul>
         </li>
         <li>
-          <a href="{% url 'create' %}">
-            <img id="bigger" src='{% static "/img/plus-square.svg" %}' alt="">
-          </a>
-        </li>
-          <li><a href="{% url 'login' %}">Log In</a></li>
+          {% if user.is_authenticated %}
+          <a class="nav-link" href="{% url 'common:logout' %}">{{ user.username }} (로그아웃)</a>
+          {% else %}
+          <a class="nav-link" href="{% url 'common:login' %}">Log in</a>
+          {% endif %}
+          </li>
         </ul>
       </nav><!-- .navbar -->
 
@@ -129,9 +133,11 @@
 
         <!-- ======= Search Form ======= -->
         <div class="search-form-wrap js-search-form-wrap">
-          <form action="{% url 'searchresult' %}" class="search-form">
+          <form action="{% url 'searchresult' %}" method="POST" class="search-form">
+            {% csrf_token %}
             <span class="icon bi-search"></span>
-            <input type="text" placeholder="Search" class="form-control">
+            <input type="text" placeholder="Search" name="searchkeyword" class="form-control" >
+            <input type="submit" hidden />
             <button class="btn js-search-close"><span class="bi-x"></span></button>
           </form>
         </div><!-- End Search Form -->

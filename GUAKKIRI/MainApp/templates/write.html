@@ -11,22 +11,73 @@
           <div class="post" data-aos="fade-up">
             <div>
               <div class="box">
-                <select>
-                  <option>상경대학</option>
-                  <option>소프트웨어융합대학</option>
-                  <option>정보통신대학</option>
-                  <option>공과대학</option>
-                  <option>의과대학</option>
-                </select>
+
+                <form action="{% url 'write' %}" method="POST" enctype="multipart/form-data">
+                  {% csrf_token %}
+                  <div>
+                    <select name="category1" onchange="categoryChange(this)">
+                      <option selected="selected" value="상경대학">상경대학</option>
+                      <option value="소프트웨어융합대학">소프트웨어융합대학</option>
+                      <option value="정보통신대학">정보통신대학</option>
+                      <option value="공과대학">공과대학</option>
+                      <option value="의과대학">의과대학</option>
+                      <option value="문과대학">문과대학</option>
+                      <option value="사회과학대학">사회과학대학</option>
+                    </select>
+
+                    <select id="SelectCat2" name="category2">
+                      <option selected="selected" >상경대학</option>
+                      <option>경영학과</option>
+                      <option>경제학과</option>
+                      <option>통계학과</option>
+
+                    </select>
+
+                  </div>
+                  
+                  </div>
+                    <input class="input_field" name="title" type="text" placeholder="제목을 입력해주세요." ><br>
+                    <textarea class="textarea_field" name="body" placeholder="내용을 입력해주세요."></textarea><br>
+                    <input type="file" name="photo" accept="image/*" placeholder="파일 선택"><br>
+                    <button type="submit" class="write_button">게시</button>
+                  </div>
+                </form>
               </div>
-              <input class="input_field" type="text" placeholder="제목을 입력해주세요." ><br>
-              <textarea class="textarea_field" placeholder="내용을 입력해주세요."></textarea><br>
-              <button class="write_button">게시</button>
-            </div>
-          </div>
         
       </div>
     </section>
   </main><!-- End #main -->
+
+  <script>
+  
+  function categoryChange(opt1selfield) {
+    var field1 = ["상경대학","경영학과","경제학과","통계학과"];
+    var field2 = ["소프트웨어융합대학","소프트웨어학과"];
+    var field3 = ["정보통신대학","전기전자공학부","반도체시스템공학과"];
+    var field4 = ["공과대학", "화학공학부", "기계공학부", "나노공학과","신소재공학부","건축학부"];
+    var field5 = ["의과대학", "의학과"];
+    var field6 = ["문과대학", "국어국문학과", "프랑스어문학과", "독어독문학과","영어영문학과","중어중문학과","러시아어문학과","한문학과","철학과","사학과","문헌정보학과"];
+    var field7 = ["사회과학대학", "행정학과", "미디어커뮤니케이션학과", "정치외교학과","사회복지학과","사회학과","심리학과"];
+   
+    var target = document.getElementById("SelectCat2");
+    if(opt1selfield.value == "상경대학") var opt2selfield  = field1;
+    else if(opt1selfield.value == "소프트웨어융합대학") var opt2selfield = field2;
+    else if(opt1selfield.value == "정보통신대학") var opt2selfield = field3;
+    else if(opt1selfield.value == "공과대학") var opt2selfield = field4;
+    else if(opt1selfield.value == "의과대학") var opt2selfield = field5;
+    else if(opt1selfield.value == "문과대학") var opt2selfield = field6;
+    else if(opt1selfield.value == "사회과학대학") var opt2selfield = field7;
+    console.log(opt2selfield)
+  
+    
+    target.options.length = 0;
+    for (i in opt2selfield) {
+      var opt = document.createElement("option")
+      opt.value = opt2selfield[i];
+      opt.innerHTML = opt2selfield[i];
+      target.appendChild(opt);
+    } 
+  }
+</script>
 
 {% endblock %}

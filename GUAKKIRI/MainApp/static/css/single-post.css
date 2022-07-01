@@ -1,0 +1,22 @@
+*{
+    font-family: 'LeferiPoint-WhiteObliqueA';
+}
+
+.container_single{
+    background-color:#FFFFFF;
+    padding-top: 30px;
+    border-radius: 33px;
+    padding-bottom: 30px;
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .single-post, .comments, .comment_l{
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+
+  .btn_comment{
+    margin-top: 10px;
+  }
