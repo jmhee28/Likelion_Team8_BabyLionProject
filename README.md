@@ -13,7 +13,8 @@ Django, python, css, html, js
 <img src =https://user-images.githubusercontent.com/92200502/176900437-31932e0e-26c5-420f-9730-08f64e373eb4.png width="600" height="400"/>
 
 
-## 1등 수상
+## 1등 수상 
+2022.07.30
 ![1656832317696-5](https://github.com/jmhee28/Likelion_Team8_BabyLionProject/assets/92200502/8d001f31-5533-42d3-a84c-fb9be3727aae)
 
 ## ROLES
